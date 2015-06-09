@@ -1,0 +1,9 @@
+let $catalog := doc('courses.xml'),
+  $courses := $catalog//Department[@Code = 'CS']/Course
+return <Summary>
+{
+    for $c in $courses
+      order by xs:int($c/@Enrollment)
+      return <Course Enrollment = "{$c/data(@Enrollment)}">{$c/Title}</Course>
+  }
+</Summary>

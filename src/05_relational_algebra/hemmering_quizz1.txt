@@ -1,0 +1,65 @@
+Relational Algebra Quiz
+Question 1:
+A B C D
+7 5 1 6 - my choice
+3 1 5 8
+3 4 3 6
+2 4 3 9
+
+Question 2:
+A B B C D
+4 c c 5 6 ok, my choice
+1 a a 7 8 ok
+7 t t 8 9 ok
+9 t t 8 9 no solution, as not 9 < 8  
+
+Question 5:
+A B C D
+1 2 4 6
+3 4 6 8
+3 4 7 9 - my choice
+
+Question 6:
+A B B C D
+1 2 2 4 6 ok
+1 2 4 6 8 ok
+1 2 4 6 9 ok
+3 4 2 4 6 ok - my choice
+3 4 4 6 8 ok
+3 4 4 7 9 ok
+5 6 2 4 6 no
+5 6 4 6 8 ok
+5 6 4 7 9 ok
+
+Question 8 - union of R(A,B,C)  and S(A,B,C)
+A B C
+1 2 3
+4 2 3
+4 5 6
+2 5 3
+1 2 6
+2 5 3
+2 5 4
+
+Question 9 - intersection of R(A,B,C)  and S(A,B,C)
+A B C
+1 2 3
+4 5 6
+2 5 3
+
+Question 10 
+## R-S
+A B C
+4 2 3
+1 2 6
+
+## S-R
+A B C
+2 5 4
+
+## Union of (R-S)  and (S-R)
+A B C
+4 2 3
+1 2 6
+2 5 4
+

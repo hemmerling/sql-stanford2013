@@ -1,0 +1,19 @@
+let $catalog := doc('courses.xml'),
+  $professors := $catalog//Professor
+
+let $distinct_prof := (
+      $professors except (
+        for $p in $professors
+          where ($p/Last_Name = $p/following::*/Last_Name and $p/First_Name = $p/following::*/First_Name)
+          return $p
+      )
+    )
+
+return <Professors>
+{
+    for $p in $distinct_prof
+    order by $p/Last_Name
+    return $p
+
+  }
+  </Professors>

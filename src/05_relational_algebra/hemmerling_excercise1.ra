@@ -1,0 +1,8 @@
+// Exercise 1: Find all pizzas eaten by at least one female over the age of 20.
+\project_{pizza} (
+      ((\project_{name}                  // people who are female and >20
+           \select_{gender='female' and age>20}
+                Person)
+      \join Eats))                        // join with Eats to find pizzas
+;
+

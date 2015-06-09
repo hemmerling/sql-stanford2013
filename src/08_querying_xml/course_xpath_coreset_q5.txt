@@ -1,0 +1,3 @@
+doc("courses.xml")/Course_Catalog/Department//Professor[Middle_Initial]/Last_Name
+|
+doc("courses.xml")/Course_Catalog/Department//Lecturer[Middle_Initial]/Last_Name

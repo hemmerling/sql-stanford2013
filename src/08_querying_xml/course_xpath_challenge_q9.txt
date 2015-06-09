@@ -1,0 +1,37 @@
+let $catalog := doc('courses.xml'),
+$professors := $catalog//Professor
+
+let $distinct_prof := (
+$professors except (
+for $p in $professors
+where ($p/Last_Name = $p/following::*/Last_Name and $p/First_Name = $p/following::*/First_Name)
+return $p
+)
+)
+
+let $courses := $catalog//Course
+return <Inverted_Course_Catalog>
+{
+    for $p in $distinct_prof
+      order by $p/Last_Name
+      return <Professor>
+{ $p/* }
+{
+        if ($courses//Professor = $p)
+        then (
+          <Courses> {
+            for $c in $courses
+              where $c//Professor = $p
+              return <Course> { $c/data(@Number) } </Course>
+          }
+</Courses>
+        )
+        else (
+          for $c in $courses
+            where $c//Professor = $p
+            return <Course> { $c/data(@Number) } </Course>
+        )
+      }
+</Professor>
+  }
+</Inverted_Course_Catalog>

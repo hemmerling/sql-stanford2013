@@ -1,0 +1,5 @@
+let $countries := doc('countries.xml')/countries/country
+for $c in $countries
+  for $l in $c/language
+    where contains($c/data(@name), $l)
+    return <country language="{data($l)}">{$c/data(@name)}</country>

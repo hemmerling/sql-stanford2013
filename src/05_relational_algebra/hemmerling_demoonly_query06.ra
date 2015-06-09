@@ -1,0 +1,13 @@
+// Find the names of all pizzas served at 'Sraw Hat', which females eat
+\project_{pizza} (
+      ((\project_{pizza}                  // pizza served at 'Sraw Hat'
+           \select_{pizzeria='Straw Hat'}
+                Serves)	   
+      )
+\join
+(\project_{pizza} ((
+           \select_{gender='female'}
+                Person)
+		   \join Eats))
+)
+;	 

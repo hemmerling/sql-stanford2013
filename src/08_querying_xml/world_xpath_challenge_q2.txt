@@ -1,0 +1,20 @@
+let $countries := doc('countries.xml')/countries/country,
+    $frenches := distinct-values($countries[language = 'French']/data(@name)),
+    $germans := distinct-values($countries[language = 'German']/data(@name))
+  return <result>
+<French>
+{
+    for $f in $frenches
+    return <country>{$f}</country>
+    
+  }
+</French>
+<German>
+{
+    for $g in $germans
+    return <country>{$g}</country>
+  }
+</German>
+</result>
+
+ 

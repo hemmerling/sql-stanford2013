@@ -1,0 +1,3 @@
+(for $c in doc("countries.xml")/countries/country
+order by xs:int($c/@population) descending
+return $c/data(@name))[1]

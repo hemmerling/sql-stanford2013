@@ -1,0 +1,8 @@
+\// What is Amy eating ?
+\project_{pizza,name} (
+\project_{pizza, name} ((
+           \select_{name='Amy'}
+                Person)
+		   \join Eats)
+)
+;

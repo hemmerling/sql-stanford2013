@@ -1,0 +1,7 @@
+let $catalog := doc('courses.xml'),
+  $courses := $catalog//Course
+  return count(
+    for $c in $courses
+      where count($c/Instructors/Lecturer) = 0
+      return $c
+  )

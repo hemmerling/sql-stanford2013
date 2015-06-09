@@ -1,0 +1,1 @@
+doc("courses.xml")/Course_Catalog/Department/Course[@Enrollment>500]/Title

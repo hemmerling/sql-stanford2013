@@ -1,0 +1,5 @@
+let $countries := doc('countries.xml')/countries/country
+for $c in $countries
+  where count($c/city[data(population) > 3000000]) > 3
+  return $c/data(@name)
+ 

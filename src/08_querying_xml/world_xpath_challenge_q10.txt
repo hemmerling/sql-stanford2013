@@ -1,0 +1,21 @@
+let $countries := doc('countries.xml')/countries/country,
+  $most_popular :=
+    for $c in $countries[count(language) > 1]
+      for $l in $c/language
+        where xs:float($l/data(@percentage)) = xs:float(max($c/language/data(@percentage)))
+        return $l,
+
+  $least_popular :=
+    for $c in $countries[count(language) > 1]
+      for $l in $c/language
+        where xs:float($l/data(@percentage)) = xs:float(min($c/language/data(@percentage)))
+        return $l
+
+  for $m in $most_popular
+    for $l in $least_popular
+      where data($m) = data($l)
+        return
+          <LangPair language="{data($l)}">
+<MostPopular>{$m/parent::country/data(@name)}</MostPopular>
+<LeastPopular>{$l/parent::country/data(@name)}</LeastPopular>
+</LangPair>

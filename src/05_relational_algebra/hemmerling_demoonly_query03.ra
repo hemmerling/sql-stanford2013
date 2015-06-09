@@ -1,0 +1,5 @@
+// Find females over the age of 20
+\project_{name} (
+           \select_{gender='female' and age>20}
+                Person)
+;

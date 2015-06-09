@@ -1,0 +1,4 @@
+for $b in doc("countries.xml")//country
+for $c in $b/city
+where $c/name = $b/@name
+return $c/name

@@ -1,0 +1,10 @@
+// Find the names of all people 
+// who eat at least one pizza served by Dominos 
+\project_{name,pizza} (
+	((\project_{name, pizza} Eats)
+	\join
+	(\project_{pizza}
+	 \select_{pizzeria='Dominos'}
+	 Serves)
+))
+;

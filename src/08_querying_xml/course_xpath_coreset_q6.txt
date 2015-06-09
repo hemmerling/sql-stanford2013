@@ -1,0 +1,1 @@
+count(doc("courses.xml")/Course_Catalog/Department/Course[contains(Description,"Cross-listed")]/Description)

@@ -1,0 +1,5 @@
+ $courses := $catalog//Course
+  for $c in $courses
+    where $c/data(Title) = $c/following::*/data(Title) or
+      $c/data(Title) = $c/preceding::*/data(Title)
+    return $c/data(@Number)

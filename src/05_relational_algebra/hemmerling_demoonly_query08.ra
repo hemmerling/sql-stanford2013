@@ -1,0 +1,14 @@
+// Find all pizzerias that serve at least one pizza for less than $10 
+// that females eat.
+\project_{pizzeria} (
+      ((\project_{pizza, pizzeria} 
+           \select_{price<10}
+                Serves)	   
+      )
+\join
+(\project_{pizza} ((
+           \select_{gender='female'}
+                Person)
+		   \join Eats))
+)
+;	 

@@ -1,0 +1,2 @@
+let $a := doc("countries.xml")//country[ language[ @percentage>50 ] = "German"] /data(@name)
+return $a

@@ -1,0 +1,5 @@
+let $catalog := doc('courses.xml'),
+  $courses := $catalog//Course
+  for $c in $courses
+    where $c/Instructors/*/Last_Name = $c/parent::Department/Chair/Professor//Last_Name
+    return $c/Title

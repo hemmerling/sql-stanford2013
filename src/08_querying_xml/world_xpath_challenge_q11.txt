@@ -1,0 +1,18 @@
+let $countries := doc('countries.xml')/countries/country,
+  $languages := $countries/language,
+  $language_names := distinct-values($countries/data(language))
+  return
+  <languages>
+{
+    for $l_name in $language_names
+      order by $l_name
+      return
+        <language name="{$l_name}">
+{
+          for $l in $languages
+            where data($l) = $l_name
+            return <country name="{data($l/parent::country/@name)}" speakers="{xs:int($l/parent::country/@population * $l/@percentage div 100) }"/>
+        }
+</language>
+  }
+</languages>

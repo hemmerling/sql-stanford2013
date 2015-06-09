@@ -1,0 +1,12 @@
+let $catalog := doc('courses.xml'),
+  $courses := $catalog//Course
+  for $c2 in $courses
+  where $c2//data(Prereq) = (
+  for $c in $courses
+    let $firsts := $c//Instructors/*/First_Name,
+        $lasts := $c//Instructors/*/Last_Name
+    where $firsts = 'Eric' and $lasts = 'Roberts'
+    return $c/data(@Number)
+  )
+  return $c2/data(@Number)
+  

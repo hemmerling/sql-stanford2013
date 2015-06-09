@@ -1,0 +1,2 @@
+let $countries := doc('countries.xml')/countries/country
+return avg($countries[data(language) = 'Russian']/count(language))

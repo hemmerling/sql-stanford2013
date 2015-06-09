@@ -1,0 +1,1 @@
+doc("courses.xml")/Course_Catalog/Department/Course[contains(Description,"system") and @Enrollment>100]/Instructors//Last_Name

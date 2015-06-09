@@ -1,0 +1,2 @@
+sum(doc("courses.xml")/Course_Catalog/Department[@Code="CS"]/Course/data(@Enrollment)) div count (doc("courses.xml")/Course_Catalog/Department[@Code="CS"]/Course/data(@Enrollment))
+

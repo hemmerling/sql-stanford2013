@@ -1,0 +1,4 @@
+doc("courses.xml")//
+Course[@Enrollment and not 
+(@Enrollment > following::*/data(@Enrollment)) and not 
+(@Enrollment > preceding::*/data(@Enrollment))]/Title

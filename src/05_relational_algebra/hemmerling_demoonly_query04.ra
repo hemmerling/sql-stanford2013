@@ -1,0 +1,7 @@
+// Pizza served at 'Straw Hat'
+\project_{pizza} (
+      (\project_{pizza}                  // pizza served at 'Straw Hat'
+           \select_{pizzeria='Straw Hat'}
+                Serves)	  
+)
+;

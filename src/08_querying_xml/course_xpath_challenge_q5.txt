@@ -1,0 +1,10 @@
+let $catalog := doc('courses.xml'),
+  $courses := $catalog//Course
+  for $c2 in (
+    for $c in $courses
+      where every $name in $c//Professor/Last_Name satisfies $name != 'Thrun'
+      return $c
+    )
+  where $c2//Professor/Last_Name = 'Ng'
+  return $c2/Title
+  

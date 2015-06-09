@@ -1,0 +1,6 @@
+// Find the pizza females eat 
+\project_{pizza} ((
+           \select_{gender='female'}
+                Person)
+		   \join Eats)
+;

@@ -1,0 +1,15 @@
+let $countries := doc('countries.xml')/countries/country,
+  $lowest := (for $c in $countries
+      where $c/data(@population div @area) = min($countries/data(@population div @area))
+      return $c),
+
+  $highest := (for $c in $countries
+      where $c/data(@population div @area) = max($countries/data(@population div @area))
+      return $c)
+
+  return <result>
+<highest density="{$highest/data(@population div @area)}">{$highest/data(@name)}</highest>
+<lowest density="{$lowest/data(@population div @area)}">{$lowest/data(@name)}</lowest>
+</result>
+
+ 

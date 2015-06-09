@@ -1,0 +1,5 @@
+let $catalog := doc('courses.xml'),
+  $courses := $catalog//Course
+  for $c in $courses
+    where $c/@Enrollment = max($courses/@Enrollment)
+    return $c/Title

@@ -1,0 +1,5 @@
+let $plist := doc("countries.xml")/countries/country[language="Russian"] 
+
+ return  
+
+ avg($plist/data(@population))

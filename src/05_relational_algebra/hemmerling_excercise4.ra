@@ -1,0 +1,19 @@
+// Find all pizzerias that serve at least one pizza for less than $10 
+// that both Amy and Fay eat.
+\project_{pizzeria} (
+      ((\project_{pizza, pizzeria} 
+           \select_{price<10}
+                Serves)	   
+      )
+\join
+(\project_{pizza} ((
+           \select_{name='Fay'}
+                Person)
+		   \join Eats))
+\join
+(\project_{pizza} ((
+           \select_{name='Amy'}
+                Person)
+		   \join Eats))
+)
+;	 

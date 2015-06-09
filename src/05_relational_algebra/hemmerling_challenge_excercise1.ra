@@ -1,0 +1,5 @@
+(\project_{pizza}(Serves) \diff \project_{pizza}(\select_{price>'10'} Serves))
+\union
+(\project_{pizza}(Eats) \diff \project_{pizza}(\select_{age>='24'} Person \join Eats))
+
+

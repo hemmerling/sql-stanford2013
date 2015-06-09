@@ -1,0 +1,11 @@
+let $countries := doc('countries.xml')/countries/country
+for $c in $countries
+  where count($c/city[population > 7000000]) > 0
+  return
+    <country name="{$c/data(@name)}">
+{
+      for $city in $c/city
+        where $city[population > 7000000]
+        return <big>{$city/data(name)}</big>
+    }
+</country>

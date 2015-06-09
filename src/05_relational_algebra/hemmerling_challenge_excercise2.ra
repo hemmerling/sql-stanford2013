@@ -1,0 +1,7 @@
+\rename_{age2}(\project_{age}(\project_{name}(\select_{pizza = 'mushroom'}Eats) \join Person))
+\diff
+\project_{age2}(
+\rename_{age2}(\project_{age}(\project_{name}(\select_{pizza = 'mushroom'}Eats) \join Person))
+\join_{age2<age1}
+\rename_{age1}(\project_{age}(\project_{name}(\select_{pizza = 'mushroom'}Eats) \join Person))
+)

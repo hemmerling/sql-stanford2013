@@ -1,0 +1,10 @@
+let $countries := doc('countries.xml')/countries/country
+for $c in $countries[language]
+  where every $l in $c/language satisfies $l/data(@percentage) < 20
+  return
+    <country name="{$c/data(@name)}">
+{
+      for $l in $c/language
+      return $l
+    }
+</country>

@@ -1,0 +1,12 @@
+<!-- DTD created at Sun Jan 27 17:36:44 CET 2013 with EditiX. Please insert an encoding attribute header for converting any DTD  -->
+<!ELEMENT countries (country*)>
+<!ELEMENT country (city*, language*)>
+<!ATTLIST country name CDATA #REQUIRED
+                    population CDATA #REQUIRED
+                   area CDATA #REQUIRED
+>
+<!ELEMENT language (#PCDATA)>
+<!ATTLIST language  percentage CDATA #REQUIRED>
+<!ELEMENT city (name*, population*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT population (#PCDATA)>

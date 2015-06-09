@@ -1,0 +1,6 @@
+ let $countries := doc('countries.xml')/countries/country,
+  $cities := $countries//city
+  for $c in $cities
+    where $c/data(name) = $c/following::*/data(name) or
+      $c/data(name) = $c/preceding::*/data(name)
+    return $c/parent::country/data(@name)
